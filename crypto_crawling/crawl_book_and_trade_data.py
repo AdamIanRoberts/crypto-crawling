@@ -8,7 +8,7 @@ from cryptofeed.backends.postgres import BookDeltaPostgres, BookPostgres, TradeP
 from cryptofeed.defines import BOOK_DELTA, L2_BOOK, TRADES
 from cryptofeed.exchanges import EXCHANGE_MAP
 
-from crypto_crawling.helpers.env import setup_environment_variables
+from crypto_crawling.env import setup_environment_variables
 
 
 def parse_arguments():
