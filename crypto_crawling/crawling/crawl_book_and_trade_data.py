@@ -15,12 +15,12 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Start crawling book and trade data.")
     parser.add_argument(
         "--symbols",
-        help="List of symbols to download (e.g. ['BTC-USDT']).",
+        help="List of symbols to download (e.g. [BTC-USDT]).",
         default=["BTC-USDT"],
     )
     parser.add_argument(
         "--exchanges",
-        help="List of exchanges to download from (e.g. ['BINANCE']).",
+        help="List of exchanges to download from (e.g. [BINANCE]).",
         default=["BINANCE"],
     )
     return parser.parse_args()
@@ -59,7 +59,9 @@ def crawl_book_and_trade_data(symbols: List[str], exchanges: List[str]) -> None:
 
 def main():
     args = parse_arguments()
-    crawl_book_and_trade_data(args.symbols, args.exchanges)
+    symbols = list(map(str, args.symbols.strip('[]').split(',')))
+    exchanges = list(map(str, args.exchanges.strip('[]').split(',')))
+    crawl_book_and_trade_data(symbols, exchanges)
 
 
 if __name__ == "__main__":
