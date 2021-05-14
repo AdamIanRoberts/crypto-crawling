@@ -1,9 +1,11 @@
 # crypto-crawling
 
+Crawls cryptocurrency order book and trade data from multiple possible exchange data feeds. Using the cryptofeed library, data is normalised and written to a postgres database. A full list of available exchanges can be found https://github.com/bmoscon/cryptofeed.
+
 ## Prerequesits
 
-- A running postgres database (instructions on creating one can be found https://hub.docker.com/_/postgres)
 - Docker
+- A running postgres database (instructions on creating one using docker can be found https://hub.docker.com/_/postgres)
 
 ## Setup instructions
 
@@ -18,7 +20,7 @@
     POSTGRES_PASSWORD=<password>
     ```
     
-- Create 'book' and 'trades' tables in the database. Sample SQL code to create tables for demo in postgres_tables.sql
+- Create 'book' and 'trades' tables in the database. Sample SQL code to create tables for demo in `postgres_tables.sql`
     
 ## Running the crawlers
 
